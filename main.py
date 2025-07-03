@@ -1,3 +1,15 @@
+def multa_localidade(velocidade):
+    if velocidade < 50:
+        return 0
+    elif velocidade >= 120:
+        return 320
+    elif velocidade >= 90:
+        return 120
+    elif velocidade > 50:
+        return 60
+    else:
+        return 0
+
 def main():
     while True:
         print("\nOnde circulava o veículo?")
@@ -28,7 +40,14 @@ def main():
             print("Por favor, introduza um valor numérico para a velocidade.")
             continue
 
-        
-        print(f"Local escolhido: {loc}, Velocidade: {velocidade} km/h")
+        if loc == 1:
+            multa = multa_localidade(velocidade)
+            if multa == 0:
+                print("Não há multa a pagar.")
+            else:
+                print(f"Multa a pagar: {multa}€")
+        else:
+            print("WIP")
+            
 if __name__ == "__main__":
     main()
