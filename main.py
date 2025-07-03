@@ -20,6 +20,18 @@ def multa_fora_localidade(velocidade):
     else:
         return 0
 
+def multa_autoestrada(velocidade):
+    if velocidade < 50:
+        return 0
+    elif velocidade > 175:
+        return 360
+    elif velocidade > 150:
+        return 120
+    elif velocidade > 120:
+        return 60
+    else:
+        return 0
+
 def main():
     while True:
         print("\nOnde circulava o veículo?")
@@ -54,8 +66,8 @@ def main():
             multa = multa_localidade(velocidade)
         elif loc == 2:
             multa = multa_fora_localidade(velocidade)
-        else:
-            multa = 0
+        elif loc == 3:
+            multa = multa_autoestrada(velocidade)
 
         if multa == 0:
             print("Não há multa a pagar.")
