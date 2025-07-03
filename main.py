@@ -22,7 +22,13 @@ def main():
             print("Opção inválida. Tente novamente.")
             continue
 
-        # Aqui depois vamos pedir a velocidade e calcular multa
+        try:
+            velocidade = float(input("Introduza a velocidade do veículo (km/h): "))
+        except ValueError:
+            print("Por favor, introduza um valor numérico para a velocidade.")
+            continue
 
+        
+        print(f"Local escolhido: {loc}, Velocidade: {velocidade} km/h")
 if __name__ == "__main__":
     main()
